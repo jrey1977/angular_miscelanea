@@ -1,0 +1,19 @@
+<h4 class="mt-5 mb-3">Clase agregada dinámicamente</h4>
+
+<div [ngClass]="alerta" class="alert" role="alert">
+    This is a <strong>{{alerta}}</strong> alert—check it out!
+</div>
+
+<button type="button" class="btn btn-dark mr-2" (click)="alerta = 'alert-dark'">Dark</button>
+<button type="button" class="btn btn-success mr-2" (click)="alerta = 'alert-success'">Success</button>
+<button type="button" class="btn btn-danger" (click)="alerta = 'alert-info'">Danger</button>
+
+<hr class="mt-5 mb-5">
+
+<h4 class="mb-3">Clase condicional con proceso asíncrono</h4>
+
+<button (click)="ejecutar()" class="btn btn-primary" type="button" name="button">
+    <i class="fa mr-2" [ngClass]="{'fa-save': !loading, 'fa-refresh fa-spin': loading }"></i>
+    <span *ngIf="loading">Guardando...</span>
+    <span *ngIf="!loading">Guardar datos</span>
+</button>
